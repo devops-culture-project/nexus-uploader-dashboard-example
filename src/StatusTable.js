@@ -20,12 +20,6 @@ function StatusTable(props) {
         { name: 'java_1.8.0.el7.rpm', value: errorStatus },
         { name: 'reacharts.tar.gz', value: successStatus },
         { name: 'NexusUploaderShow.pptx', value: warningStatus },
-    //     { name: 'NexusUploaderShow.pptx', value: "Unknown" },
-    //     { name: 'NexusUploaderShow.pptx', value: "Unknown" },
-    //     { name: 'NexusUploaderShow.pptx', value: "Unknown" },
-    //     { name: 'NexusUploaderShow.pptx', value: "Unknown" },
-    //     { name: 'NexusUploaderShow.pptx', value: "Unknown" },
-    //     { name: 'NexusUploaderShow.pptx', value: "Unknown" },
     ];
 
     return(

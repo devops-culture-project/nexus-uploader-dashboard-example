@@ -23,8 +23,20 @@ class Dashboard extends React.Component {
                 { state: 'clicked', color: 'light', text: 'Click Here To Upload' },
                 { state: 'finished', color: 'success', text: 'Finished !' },
             ],
-            uploadMenuStatus: 2,
+            uploadMenuStateCode: 0,
         }
+    }
+
+    handleUploadMenuClick(currentStateCode) {
+        if (currentStateCode == 1) {
+            this.setState({
+                uploadMenuStateCode: 1
+            });
+        } else if (currentStateCode == 2) {
+            this.setState({
+                uploadMenuStateCode: 2
+            });
+        } 
     }
 
     render() {
@@ -47,7 +59,8 @@ class Dashboard extends React.Component {
                             <UploadMenu 
                                 isVisible={this.state.isUploadMenuVisible}
                                 isFileUploadVisible={this.state.isFileUploadVisible}
-                                menuState={this.state.uploadMenuState[this.state.uploadMenuStatus]}
+                                menuState={this.state.uploadMenuState[this.state.uploadMenuStateCode]}
+                                onClick={() => this.handleUploadMenuClick(this.state.uploadMenuStateCode)}
                             />
                             {/* <APIMenu isVisible={this.state.isAPIMenuVisible}/> */}
                         </Col>

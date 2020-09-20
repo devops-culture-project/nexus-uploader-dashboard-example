@@ -11,7 +11,7 @@ function UploadMenu(props) {
 
     return(
         <Accordion className="upload-menu" style={{ padding: '10px'}}>
-            <Accordion.Toggle as={Button} size="lg" block eventKey="0" variant={props.menuState.color}>
+            <Accordion.Toggle as={Button} size="lg" block eventKey="0" variant={props.menuState.color} onClick={props.onClick}>
                 {props.menuState.text}
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="0">
