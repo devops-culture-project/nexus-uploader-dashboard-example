@@ -15,7 +15,7 @@ class MainNavbar extends React.Component {
     render() {
         return(
             <Navbar bg="white">
-                <Navbar.Brand href="#home">
+                <Navbar.Brand href="/">
                     <img
                         alt=""
                         src={logo}
@@ -27,7 +27,8 @@ class MainNavbar extends React.Component {
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Nav className="mr-sm-2">
-                    <Nav.Link href="#home">REST API</Nav.Link>
+                    <Nav.Link href='/upload'>UPLOAD</Nav.Link>
+                    <Nav.Link href='/rest-api'>REST API</Nav.Link>
                 </Nav>
             </Navbar>
         );

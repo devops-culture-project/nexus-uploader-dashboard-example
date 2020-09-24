@@ -6,9 +6,13 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Table from 'react-bootstrap/Table';
 
-function SystemLogCard(props) {
+const SystemLogCard = ({isVisible}) => {
 
     const data = "This is the log and this is the second log line";
+
+    if(!isVisible) {
+        return null;
+    }
 
     return(
         <Container  style={{ padding: '10%'}}>

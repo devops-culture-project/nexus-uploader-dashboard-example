@@ -8,7 +8,7 @@ import Col from 'react-bootstrap/Col';
 import Table from 'react-bootstrap/Table';
 import Card from 'react-bootstrap/Card';
 
-function StatusTable(props) {
+const StatusTable = ({isVisible}) => {
 
     const successStatus = <img alt="" src={successLogo} className="justify-content-center"/>;
     const warningStatus = <img alt="" src={warningLogo} className="d-inline-block align-top"/>;
@@ -22,19 +22,18 @@ function StatusTable(props) {
         { name: 'NexusUploaderShow.pptx', value: warningStatus },
     ];
 
+    if(!isVisible) {
+        return null;
+    }
+
     return(
-        <Container style={{ padding: '20%'}}>
+        <Container style={{ padding: '21%'}}>
             <Row className="justify-content-md-center">
                 <Col>
                     <Card>
                         <Card.Header as="h5">Packages Status</Card.Header>
                     </Card>
-                    <Table bordered hover size="sm" >
-                        {/* <ListGroup variant="light">
-                            {data.map((item) => 
-                                <ListGroup.Item> {item.name}:   {item.value} </ListGroup.Item>
-                            )}
-                        </ListGroup> */}
+                    <Table bordered hover size="sm">
                         <tbody>
                             {data.map((item => 
                                 <tr>

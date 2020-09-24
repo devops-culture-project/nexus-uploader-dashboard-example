@@ -1,14 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Dashboard from './Dashboard';
-import './index.css';
+// import './index.css';
 import * as serviceWorker from './serviceWorker';
+import App from './App';
+import { BrowserRouter } from "react-router-dom"
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Dashboard />
-  </React.StrictMode>,
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+  ,
   document.getElementById('root')
 );
 

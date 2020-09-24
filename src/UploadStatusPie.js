@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import { PieChart, Pie, Cell, ResponsiveContainer, Sector } from 'recharts';
 
 const data = [
@@ -57,48 +57,36 @@ const renderActiveShape = (props) => {
     );
   };
 
-class UploadStatusPie extends React.Component {
+const UploadStatusPie = ({onMouse, activeIndex, isVisible}) => {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            activeIndex: 0,
-        }
+    if(!isVisible) {
+        return null;
     }
-    
-    onPieEnter = (data, index) => {
-        this.setState({
-          activeIndex: index,
-        });
-    };
 
-    render() {
-
-        return (
-            <ResponsiveContainer height={500} width="100%">
+    return (
+        <ResponsiveContainer height={500} width="100%">
             <PieChart>
-            <Pie
-                activeIndex={this.state.activeIndex}
-                activeShape={renderActiveShape}
-                data={data}
-                innerRadius={160}
-                outerRadius={200}
-                startAngle={90} 
-                endAngle={450}
-                paddingAngle={2}
-                dataKey="value"
-                onMouseEnter={this.onPieEnter}
-            >
-            {
-                data.map((entry, index) => (
-                    <Cell key={`cell-${index}`} fill={colors[index]}/>
+                <Pie
+                    activeIndex={activeIndex}
+                    activeShape={renderActiveShape}
+                    data={data}
+                    innerRadius={160}
+                    outerRadius={200}
+                    startAngle={90} 
+                    endAngle={450}
+                    paddingAngle={2}
+                    dataKey="value"
+                    onMouseEnter={onMouse}
+                >
+                {
+                    data.map((entry, index) => (
+                        <Cell key={`cell-${index}`} fill={colors[index]}/>
                 ))
-            }
-            </Pie>
-        </PieChart>
+                }
+                </Pie>
+            </PieChart>
         </ResponsiveContainer>
     );
-  }
 }
 
 export default UploadStatusPie;
