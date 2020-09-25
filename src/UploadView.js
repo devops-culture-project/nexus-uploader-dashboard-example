@@ -27,10 +27,12 @@ const UploadView = () => {
     // It determines whether or not the pie and charts will be shown.
     const [visibility, setVisibility] = React.useState(false);
 
-    function uploadClick() {
+    // This is the files information that uploaded.
+    const [files, setFiles] = React.useState([]);
+
+    const uploadClick = () => {
         switch (stateCode) {
             case 0:
-                setStateCode(1);
                 break;
             case 1:
                 setVisibility(true);
@@ -40,13 +42,22 @@ const UploadView = () => {
           }
     }
 
-    function onPieEnter(data, index) {
+    const onFilesChange = (event) => {
+        console.log(event.target.files);
+        // for (file in event.target.files) {
+        //     console.log.apply(file.name);
+        // }
+        //setFiles(event.target.files);
+        setStateCode(1);
+    };
+
+    const onPieEnter = (data, index) => {
         setActiveIndex(index);
     };
 
     return(
         <React.Fragment>
-            <Container fluid>
+            <Container fluid="true">
             <Row className="justify-content-md-left" style={{ 'padding': '40px'}}>
                 <MainNavbar/>
             </Row>
@@ -62,6 +73,8 @@ const UploadView = () => {
                             stateCode={stateCode} 
                             states={states} 
                             clickAction={uploadClick}
+                            fileChangeAction={event =>onFilesChange(event)}
+                            files={files}
                         />
                     </Col>
                     <Col sm={4}></Col>

@@ -2,9 +2,6 @@ import React from 'react';
 import Carousel from 'react-bootstrap/Carousel'
 import ldLogo from './ld-carousel.png';
 import nexusLogo from './nexus-carousel.png';
-import MainNavbar from './MainNavbar';
-import Container from 'react-bootstrap/esm/Container';
-import Row from 'react-bootstrap/esm/Row';
 
 const HomeCarousel = () => {
 
