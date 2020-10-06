@@ -4,7 +4,6 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Table from 'react-bootstrap/Table';
 
 const SystemLogCard = ({isVisible}) => {
 
@@ -21,11 +20,9 @@ const SystemLogCard = ({isVisible}) => {
                 <Card>
                     <Card.Header as="h5">System Log</Card.Header>
                 </Card>
-                <Table striped bordered hover >
-                    <ListGroup variant="light">
-                        {data}
-                    </ListGroup>
-                </Table>
+                <ListGroup variant="light">
+                    {data}
+                </ListGroup>
                 </Col>
             </Row>
         </Container>

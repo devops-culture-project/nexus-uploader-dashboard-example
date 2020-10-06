@@ -36,7 +36,7 @@ const StatusTable = ({isVisible}) => {
                     <Table bordered hover size="sm">
                         <tbody>
                             {data.map((item => 
-                                <tr>
+                                <tr key={item.name}>
                                     <td>{item.name}</td>
                                     <td>{item.value}</td>
                                 </tr>

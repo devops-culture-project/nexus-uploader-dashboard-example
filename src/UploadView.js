@@ -1,12 +1,13 @@
-import React from 'react';
-import MainNavbar from './MainNavbar';
-import UploadMenu from './UploadMenu';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import UploadStatusPie from './UploadStatusPie';
-import StatusCard from './StatusTable';
-import SystemLogCard from './SystemLogCard';
+import React from 'react'
+import MainNavbar from './MainNavbar'
+import UploadMenu from './UploadMenu'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+import UploadStatusPie from './UploadStatusPie'
+import StatusCard from './StatusTable'
+import SystemLogCard from './SystemLogCard'
+
 
 const UploadView = () => {
 
@@ -42,18 +43,14 @@ const UploadView = () => {
           }
     }
 
-    const onFilesChange = (event) => {
-        console.log(event.target.files);
-        // for (file in event.target.files) {
-        //     console.log.apply(file.name);
-        // }
-        //setFiles(event.target.files);
-        setStateCode(1);
-    };
-
     const onPieEnter = (data, index) => {
         setActiveIndex(index);
     };
+
+    const handleAttachFile = () => {
+        setStateCode(1);
+        uploadClick();
+    }
 
     return(
         <React.Fragment>
@@ -61,21 +58,16 @@ const UploadView = () => {
             <Row className="justify-content-md-left" style={{ 'padding': '40px'}}>
                 <MainNavbar/>
             </Row>
-            {/* <Row className="justify-content-md-left" style={{ 'padding': '40px'}}>
-                <APIMenu
-                    isVisible={true}
-                />
-            </Row> */}
                 <Row>
                     <Col sm={4}></Col>
                     <Col>
-                        <UploadMenu 
-                            stateCode={stateCode} 
-                            states={states} 
-                            clickAction={uploadClick}
-                            fileChangeAction={event =>onFilesChange(event)}
-                            files={files}
-                        />
+                            <UploadMenu 
+                                stateCode={stateCode} 
+                                states={states} 
+                                clickAction={uploadClick}
+                                fileChangeAction={event => handleAttachFile(event)}
+                                files={files}
+                            />
                     </Col>
                     <Col sm={4}></Col>
                 </Row>
@@ -103,4 +95,4 @@ const UploadView = () => {
     );
 }
 
-export default UploadView;
+export default UploadView
