@@ -12,7 +12,7 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: articact-uploader-ui
+      app: artifact-uploader-ui
   strategy: {}
   template:
     metadata:
