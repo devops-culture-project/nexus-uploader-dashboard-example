@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app.kubernetes.io/name: artifact-uploader
+    app.kubernetes.io/version: "1.0.0"
+    app.kubernetes.io/component: client
+    app.kubernetes.io/part-of: artifact-uploader
+    app.kubernetes.io/managed-by: argocd
+  name: artifact-uploader-ui
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: articact-uploader-ui
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: artifact-uploader-ui
+    spec:
+      containers:
+      - image: DOCKERHUBUSER/artup-ui
+        name: DOCKERHUBUSER/artup-ui
+        resources: {}
+status: {}
