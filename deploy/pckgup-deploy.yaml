@@ -20,7 +20,7 @@ spec:
         app: artifact-uploader-ui
     spec:
       containers:
-      - image: DOCKERHUBUSER/artup-ui
-        name: DOCKERHUBUSER/artup-ui
+      - image: DOCKERHUBUSER/pkgup-ui:1
+        name: pkgup-ui
         resources: {}
 status: {}
