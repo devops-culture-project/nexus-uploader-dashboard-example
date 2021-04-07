@@ -2,8 +2,6 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app.kubernetes.io/name: artifact-uploader
-    app.kubernetes.io/version: "1.0.0"
     app.kubernetes.io/component: client
     app.kubernetes.io/part-of: artifact-uploader
     app.kubernetes.io/managed-by: argocd
@@ -14,6 +12,4 @@ spec:
   ports:
   - name: ui-http
     port: 80
-    targetPort: ui-http
-    nodePort: 30401
-  type: NodePort
+  type: LoadBalancer
