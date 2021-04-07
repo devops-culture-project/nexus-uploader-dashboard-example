@@ -33,7 +33,7 @@ const HomeCarousel = () => {
           <Carousel.Caption>
             <h1>LINUX - DEVOPS TEAM</h1>
             <h4>check out our Confluence space at:</h4>
-            <p>https://confluence.app.iaf</p>
+            <p>https://confluence.not.real</p>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
