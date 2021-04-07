@@ -2,8 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app.kubernetes.io/name: artifact-uploader
-    app.kubernetes.io/version: "1.0.0"
     app.kubernetes.io/component: client
     app.kubernetes.io/part-of: artifact-uploader
     app.kubernetes.io/managed-by: argocd
@@ -13,7 +11,6 @@ spec:
   selector:
     matchLabels:
       app: artifact-uploader-ui
-  strategy: {}
   template:
     metadata:
       labels:
@@ -22,5 +19,3 @@ spec:
       containers:
       - image: DOCKERHUBUSER/pkgup-ui:1
         name: pkgup-ui
-        resources: {}
-status: {}
